@@ -13,7 +13,7 @@ const client = new Client({
   restTimeOffset: 0
 });
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
 client.commands = new Collection();
 client.prefix = PREFIX;
 client.queue = new Map();
@@ -50,7 +50,7 @@ i18n.configure({
  */
 client.on("ready", () => {
   console.log(`${client.user.username} ready!`);
-  client.user.setActivity(`${PREFIX}help and ${PREFIX}play`, { type: "LISTENING" });
+  client.user.setActivity(`${PREFIX}help / ${PREFIX}play and XCALIBUR'S Heart ❤️`, { type: "LISTENING" });
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
